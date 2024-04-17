@@ -72,3 +72,30 @@ jobs:
       run: |
         git push origin main
         
+ Order-Imbalance_Price-Levels_Market-Spread:
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Pull latest changes
+      run: |
+        git pull origin main
+        
+    - name: Run request code
+      run: python3 Order Imbalance_Price Levels_Market Spread.py
+       
+    - name: Configure Git identity
+      run: |
+        git config user.email "$GIT_USER_EMAIL"
+        git config user.name "$GIT_USER_NAME"
+
+    - name: Commit changes
+      run: |
+        git add -A
+        git commit -m "Order Imbalance, Price Levels and Market Spread"
+        
+    - name: Push changes
+      run: |
+        git push origin main
+        
