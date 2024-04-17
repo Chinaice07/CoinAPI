@@ -1,0 +1,10 @@
+on:
+
+env:
+GITHUB_USER: Chinaice07
+GITHUB_EMAIL: chijiokeangela32@gmail.com
+
+jobs:
+api_request:
+runs-on: ubuntu-latest
+-steps: 
