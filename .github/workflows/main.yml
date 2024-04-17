@@ -43,6 +43,7 @@ jobs:
 
  visualisation:
   runs-on: ubuntu-latest
+  needs: api_request
   steps: 
     - name: Checkout code
       uses: actions/checkout@v4
