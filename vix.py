@@ -14,8 +14,8 @@ order_book_data = read_order_book_data(file_path)
 
 # Function to visualize order book depth chart
 def visualize_order_book_depth(order_book_data):
-    bids = order_book_data["bids"]
-    asks = order_book_data["asks"]
+    bids = order_book_data[0]["bids"]
+    asks = order_book_data[0]["asks"]
     
     bid_prices = [entry["price"] for entry in bids]
     bid_sizes = [entry["size"] for entry in bids]
