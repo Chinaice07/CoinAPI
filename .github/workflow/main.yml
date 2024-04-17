@@ -6,6 +6,13 @@ on:
 
 workflow_dispatch:
 
+permissions:
+  contents: write # Grants permissions to write to the repo
+
+env:
+  GIT_USER_EMAIL: chijiokeangela32@gmail.com
+  GIT_USER_NAME: Chinaice07
+
 jobs:
  api_request:
   runs-on: ubuntu-latest
@@ -21,5 +28,17 @@ jobs:
      run: |
        chmod +x main.py
        ./main.py
-     
+       
+   - name: Configure Git identity
+     run: |
+       git config user.email "$GIT_USER_EMAIL"
+       git config user.name "$GIT_USER_NAME"
+
+   - name: Commit changes
+     run: |
+       git add -A
+       git commit -m "api_request"
+   - name: Push changes
+     run: |
+       git push origin main
     
