@@ -1,10 +1,25 @@
+name: Data Request
 on:
+  push:
+    branches:
+     - main
 
-env:
-GITHUB_USER: Chinaice07
-GITHUB_EMAIL: chijiokeangela32@gmail.com
+workflow_dispatch:
 
 jobs:
-api_request:
-runs-on: ubuntu-latest
--steps: 
+ api_request:
+  runs-on: ubuntu-latest
+  steps: 
+   - name: Checkout code
+    uses: actions/checkout@v4
+    
+   - name: Pull latest changes
+     run: |
+       git pull origin main
+        
+   - name: Run request code
+     run: |
+       chmod +x main.py
+       ./main.py
+     
+    
