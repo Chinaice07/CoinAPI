@@ -2,8 +2,8 @@ import requests
 import json
 
 API_KEY = "41134A54-15EA-4727-AF95-0D8434382EEE"
-symbol = "KRAKEN_SPOT_BTC_USD"
-url = f"https://rest.coinapi.io/v1/orderbooks/current?filter_symbol_id={symbol}&apikey={API_KEY}"
+symbol_id = "KRAKEN_SPOT_BTC_USD"
+url = f"https://rest.coinapi.io/v1/orderbooks/current?filter_symbol_id={symbol_id}&apikey={API_KEY}"
 
 response = requests.get(url)
 
