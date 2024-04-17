@@ -40,5 +40,34 @@ jobs:
     - name: Push changes
       run: |
         git push origin main
-        
+
+ visualisation:
+  runs-on: ubuntu-latest
+  steps: 
+    - name: Checkout code
+      uses: actions/checkout@v4
     
+    - name: Pull latest changes
+      run: |
+        git pull origin main
+
+    - name: Install matplotlib
+      run: pip install matplotlib
+        
+    - name: Run for Visual image of asks and bids
+      run: python3 vix.py
+       
+    - name: Configure Git identity
+      run: |
+        git config user.email "$GIT_USER_EMAIL"
+        git config user.name "$GIT_USER_NAME"
+
+    - name: Commit changes
+      run: |
+        git add -A
+        git commit -m "visual image generated"
+        
+    - name: Push changes
+      run: |
+        git push origin main
+        
