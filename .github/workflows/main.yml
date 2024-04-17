@@ -25,9 +25,7 @@ jobs:
         git pull origin main
         
     - name: Run request code
-      run: |
-        chmod +x main.py
-        ./main.py
+      run: python3 main.py
        
     - name: Configure Git identity
       run: |
@@ -38,7 +36,9 @@ jobs:
       run: |
         git add -A
         git commit -m "api_request"
+        
     - name: Push changes
       run: |
         git push origin main
+        
     
