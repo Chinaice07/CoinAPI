@@ -10,8 +10,8 @@ permissions:
   contents: write # Grants permissions to write to the repo
 
 env:
-  GIT_USER_EMAIL: chijiokeangela32@gmail.com
-  GIT_USER_NAME: Chinaice07
+  GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
+  GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
 
 jobs:
  api_request:
