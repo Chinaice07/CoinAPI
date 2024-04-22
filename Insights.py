@@ -13,8 +13,8 @@ order_book_data = read_order_book_data(file_path)
 
 # Function to calculate order imbalance
 def calculate_order_imbalance(order_book_data):
-    bids = sum(entry[0]["size"] for entry in order_book_data["bids"])
-    asks = sum(entry[0]["size"] for entry in order_book_data["asks"])
+    bids = sum(entry["size"] for entry in order_book_data["bids"])
+    asks = sum(entry["size"] for entry in order_book_data["asks"])
 
     order_imbalance = (bids - asks) / (bids + asks)
     return order_imbalance
