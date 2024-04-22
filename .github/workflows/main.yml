@@ -8,15 +8,16 @@ on:
 
 permissions:
   contents: write # Grants permissions to write to the repo
-
 env:
   GIT_USER_EMAIL: ${{ secrets.GIT_USER_EMAIL }}
   GIT_USER_NAME: ${{ secrets.GIT_USER_NAME }}
 
 jobs:
  api_request:
+  env: 
+   API_KEY: ${{ secrets.API_KEY }}
   runs-on: ubuntu-latest
-  steps: 
+  steps:
     - name: Checkout code
       uses: actions/checkout@v4
     
