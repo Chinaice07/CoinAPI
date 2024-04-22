@@ -1,7 +1,8 @@
 import requests
 import json
+import os
 
-API_KEY = "${secrets.API_KEY}"
+API_KEY = os.getenv("API_KEY")
 symbol = "KRAKEN_SPOT_BTC_USD"
 url = f"https://rest.coinapi.io/v1/orderbooks/current?filter_symbol_id={symbol}&apikey={API_KEY}"
 
